@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: mdb  #容器名称
+server:
+  port: 8081 #服务器端口
+  context-path: /mdb
+  session:
+    timeout: 30
+  tomcat:
+    uri-encoding: UTF-8
+    
+        
