@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mdb.dao.UserDAO" >
+  <resultMap id="BaseResultMap" type="com.mdb.po.UserPO" >
+    <id column="id" property="id" jdbcType="NUMERIC" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="NVARCHAR" />
+    <result column="sex" property="sex" jdbcType="VARCHAR" />
+    <result column="pwd" property="password" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="birthday" property="birthday" jdbcType="DATE" />
+  </resultMap>
+ 
+  <sql id="Base_Column_List" >
+   id,phone,name,pwd,email,birthday,sex
+  </sql>
+  
+  <select id="findOne"	resultMap="BaseResultMap">
+  	SELECT <include refid="Base_Column_List"></include> FROM TUSER WHERE ID=#{user.id}
+  </select>
+  
+</mapper>

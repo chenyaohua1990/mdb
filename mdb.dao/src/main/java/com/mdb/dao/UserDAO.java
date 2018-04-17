@@ -1,11 +1,13 @@
 package com.mdb.dao;
 
-import org.springframework.stereotype.Repository;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import com.mdb.po.UserPO;
-@Repository
+
+@Mapper
 public interface UserDAO {
 	
-	UserPO findOne(UserPO userQuery);
+	UserPO findOne(@Param("user")UserPO userQuery);
 
 }
